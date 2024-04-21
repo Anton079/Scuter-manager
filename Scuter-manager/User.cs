@@ -23,51 +23,50 @@ namespace Scuter_manager
             this._phone = int.Parse(token[3]);
         }
 
-        public User(int Id, string Email, string Password, int Phone)
+        public User(int id, string email, string password, int phone)
         {
-            Id = id;
-            Email = email;
-            Password = password;
-            Phone = phone;
+            _id = id;
+            _email = email;
+            _password = password;
+            _phone = phone;
         }
 
-        public int id
+        public int Id
         {
             get { return _id; }
             set { _id = value; }
         }
 
-        public string email
+        public string Email
         {
             get { return _email; }
             set { _email = value; }
         }
 
-        public string password
+        public string Password
         {
             get { return _password; }
             set { _password = value; }
         }
 
-        public int phone
+        public int Phone
         {
             get { return _phone; }
-
+            set { _phone = value; }
         }
 
         public string UserInfo()
         {
             string text = " ";
-            text += "Id " + id + "\n";
-            text += "Email " + email + "\n";
-            text += "Password " + email + "\n";
-            text += "Phone " + phone + "\n";
+            text += "Id " + _id + "\n";
+            text += "Email " + _email + "\n";
+            text += "Password " + _password + "\n";
+            text += "Phone " + _phone + "\n";
             return text;
         }
 
         public string ToSave()
         {
-
             return this._id + "," + this._email + "," + this._password + "," + this._phone;
         }
     }

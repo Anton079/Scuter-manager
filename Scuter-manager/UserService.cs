@@ -35,7 +35,7 @@ namespace Scuter_manager
             }
         }
 
-        private String GetFilePath()
+        public String GetFilePath()
         {
             string currentDirectory = Directory.GetCurrentDirectory();
 
@@ -89,6 +89,28 @@ namespace Scuter_manager
             {
                 Console.WriteLine(x.UserInfo());
             }
+        }
+
+        public int FindUserById(int id)
+        {
+            foreach(User x in _UserS)
+            {
+                if(x.Id == id)
+                {
+                    return id;
+                }
+            }
+            return -1;
+        }
+
+        public bool AddUser(User user)
+        {
+            if(FindUserById(user.Id) == -1)
+            {
+                this._UserS.Add(user);
+                return true;
+            }
+            return false;
         }
     }
 }
